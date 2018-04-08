@@ -1,0 +1,11 @@
+.navbar {
+    background-color: #e9e3c4;
+    height: 75px;
+}
+
+.navbar-brand {
+    font-size: 40px;
+}
+.navbar-text {
+    padding-right: 50px;
+}

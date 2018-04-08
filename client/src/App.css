@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+}
+
+.App-logo{
+  opacity: .25;
+  position: relative;
+  z-index: -1;
+  width: 100%;
+  margin-top: 150px;
+}
+
+.App-header {
+  background-color: #48818f;
+  height: 150px;
+  padding: 20px;
+  color: white;
+  font-size: 35px;
+  
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
