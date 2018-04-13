@@ -23,13 +23,12 @@ class Events extends Component {
           <Navbar />
           <Container fluid>
             <Row>
-              <div>
-              <Col size="sm-6" />
+              <Col size="sm-6">
                 <EventForm />
+              </Col>
               <Col size="sm-6">
                 <CalendarView />
               </Col>
-              </div>
             </ Row>
           </ Container>
           <Footer />

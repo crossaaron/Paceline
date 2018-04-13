@@ -1,6 +1,6 @@
 import React from "react";
 import "./Calendar.css";
-import Calendar from "react-calendar/dist/entry.nostyle";
+import Calendar from "react-calendar/dist/entry";
 
 const CalendarView = props => (
   <div className="Jumbotron">
