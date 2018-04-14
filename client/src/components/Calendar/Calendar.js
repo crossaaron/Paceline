@@ -1,11 +1,24 @@
-import React from "react";
+import React, { Component } from "react";
 import "./Calendar.css";
 import Calendar from "react-calendar/dist/entry";
+import API from "../../utils/API";
 
-const CalendarView = props => (
-  <div className="Jumbotron">
-    <Calendar onClickDay={() => console.log("day clicked")} />
-  </div>
-);
+class CalendarContainer extends Component {
+  state = {
+    date: new Date()
+  };
 
-export default CalendarView;
+  handleDateChange = date => {
+    API.getEvents({ date })
+      .then(res => this.props.onChange(res.data));
+  }
+  render() {
+    return (
+      <div className="Jumbotron">
+        <Calendar value={this.state.date} onChange={this.handleDateChange} />
+      </div>
+    );
+  }
+}
+
+export default CalendarContainer;
