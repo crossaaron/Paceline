@@ -1,36 +1,32 @@
-import axios from "axios";
+// import axios from "axios";
 
 export default {
   // Gets user info
   getTeam: function() {
-    return axios.get("/api/teams/");
+    return axios.get("/api/team/");
   },
   // Gets the user with the given id
   getUser: function(id) {
-    return axios.get("/api/users/" + id);
+    return axios.get("/api/user/" + id);
   },
   // Deletes the User with the given id
   deleteUser: function(id) {
-    return axios.delete("/api/users/" + id);
+    return axios.delete("/api/user/" + id);
   },
   // Saves a user to the database
   saveUser: function(UserData) {
-    return axios.post("/api/users", UserData);
+    return axios.post("/api/user", UserData);
   },
   //Gets event with given id
   getEvent: function(id) {
-    return axios.get("/api/events/" + id);
-  },
-  //Gets event with given params e.g. { date: new Date() }
-  getEvents: function(params) {
-    return axios.get("/api/events", { params });
+    return axios.get("/api/event/" + id);
   },
   // Deletes Event with the given ID
   deleteEvent: function(id) {
-    return axios.delete("/api/events/" + id);
+    return axios.delete("/api/event/" + id);
   },
   // Saves Event with the given ID
   saveEvent: function(EventData) {
-    return axios.post("/api/users", EventData);
+      return axios.post("/api/user", EventData);
   }
 };
