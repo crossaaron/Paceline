@@ -9,10 +9,9 @@ const App = () => (
   <Router>
     <div>
       <Switch>
-        <Route exact path="/" component={Events} />
-        {/* <Route exact path="/books" component={Books} />
-        <Route exact path="/books/:id" component={Detail} />
-        <Route component={NoMatch} /> */}
+        {/* <Route exact path="/" component={Home}  /> */}
+        <Route exact path="/events" component={Events}/>
+        {/* <Route exadt path="/roster" component={Roster}/> */}
       </Switch>
     </div>
   </Router>

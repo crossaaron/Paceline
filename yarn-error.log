@@ -1,14 +1,14 @@
 Arguments: 
-  /usr/local/Cellar/node/8.6.0/bin/node /usr/local/bin/yarn start
+  /usr/local/bin/node /usr/local/bin/yarn start
 
 PATH: 
-  /Users/ZacharyCarter/.rvm/gems/ruby-2.4.0/bin:/Users/ZacharyCarter/.rvm/gems/ruby-2.4.0@global/bin:/Users/ZacharyCarter/.rvm/rubies/ruby-2.4.0/bin:/Users/ZacharyCarter/anaconda/bin:/bin:/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin:/Users/ZacharyCarter/.rvm/gems/ruby-2.4.0/bin:/Users/ZacharyCarter/.rvm/gems/ruby-2.4.0@global/bin:/Users/ZacharyCarter/.rvm/rubies/ruby-2.4.0/bin:/Users/ZacharyCarter/anaconda/bin:/usr/local/sbin:/Users/ZacharyCarter/.rvm/bin
+  /Library/Frameworks/Python.framework/Versions/3.6/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Xamarin Workbooks.app/Contents/SharedSupport/path-bin:/Library/Frameworks/Python.framework/Versions/3.6/bin
 
 Yarn version: 
   1.5.1
 
 Node version: 
-  8.6.0
+  8.9.4
 
 Platform: 
   darwin x64
@@ -20,6 +20,10 @@ npm manifest:
     "description": "",
     "main": "server.js",
     "scripts": {
+      "server": "node server.js",
+      "client": "node scripts/start-client.js",
+      "start": "concurrently \"nodemon server.js\" \"npm run client\"",
+      "build": "node scripts/build.js",
       "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "",
@@ -2255,16 +2259,16 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 1
+  Exit code: 127
   Command: sh
-  Arguments: -c node server.js
-  Directory: /Users/ZacharyCarter/Desktop/Personal/bootcampcode/Paceline
+  Arguments: -c concurrently "nodemon server.js" "npm run client"
+  Directory: /Users/aaroncross/Desktop/codeAC/Paceline
   Output:
   
       at ProcessTermError.MessageError (/usr/local/lib/node_modules/yarn/lib/cli.js:186:110)
       at new ProcessTermError (/usr/local/lib/node_modules/yarn/lib/cli.js:226:113)
       at ChildProcess.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:30281:17)
-      at emitTwo (events.js:125:13)
-      at ChildProcess.emit (events.js:213:7)
-      at maybeClose (internal/child_process.js:927:16)
-      at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+      at emitTwo (events.js:126:13)
+      at ChildProcess.emit (events.js:214:7)
+      at maybeClose (internal/child_process.js:925:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
