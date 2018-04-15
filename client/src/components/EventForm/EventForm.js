@@ -3,7 +3,7 @@ import "./EventForm.css";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 
 const EventForm = props => (
-  <div>
+  <div className="mainForm">
     <form>
       <Input
         //   value={this.state.title}

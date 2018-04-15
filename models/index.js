@@ -1,5 +1,4 @@
 module.exports = {
-  Event: require("./event"),
-  Team: require("./team"),
+  Event: require("./event"), 
   User: require("./user")
 };
