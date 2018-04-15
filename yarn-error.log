@@ -20,10 +20,6 @@ npm manifest:
     "description": "",
     "main": "server.js",
     "scripts": {
-      "server": "node server.js",
-      "client": "node scripts/start-client.js",
-      "start": "concurrently \"nodemon server.js\" \"npm run client\"",
-      "build": "node scripts/build.js",
       "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "",
@@ -2259,9 +2255,9 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 127
+  Exit code: 1
   Command: sh
-  Arguments: -c concurrently "nodemon server.js" "npm run client"
+  Arguments: -c node server.js
   Directory: /Users/aaroncross/Desktop/codeAC/Paceline
   Output:
   
