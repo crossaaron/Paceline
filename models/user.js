@@ -1,51 +1,63 @@
-const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
+const bcrypt = require('bcryptjs')
+// mongoose.promise = Promise
 
-// define the User model schema
-const UserSchema = new mongoose.Schema({
+var UserSchema = new Schema({
+
+  username: {
+    type: String,
+    trim: true,
+    required: "Username is Required"
+  },
+
+  password: {
+    type: String,
+    trim: true,
+    required: "Password is Required",
+    validate: [
+      function(input) {
+        return input.length >= 6;
+      },
+      "Password should be longer."
+    ]
+  },
+
   email: {
     type: String,
-    index: { unique: true }
+    unique: true,
+    match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
   },
-  password: String,
-  name: String
+
+  userCreated: {
+    type: Date,
+    default: Date.now
+  }
 });
 
+// Define schema methods
+userSchema.methods = {
+	checkPassword: function(inputPassword) {
+		return bcrypt.compareSync(inputPassword, this.password)
+	},
+	hashPassword: plainTextPassword => {
+		return bcrypt.hashSync(plainTextPassword, 10)
+	}
+}
 
-/**
- * Compare the passed password with the value in the database. A model method.
- *
- * @param {string} password
- * @returns {object} callback
- */
-UserSchema.methods.comparePassword = function comparePassword(password, callback) {
-  bcrypt.compare(password, this.password, callback);
-};
+// Define hooks for pre-saving
+userSchema.pre('save', function(next) {
+	if (!this.password) {
+		console.log('=======NO PASSWORD PROVIDED=======')
+		next()
+	} else {
+		this.password = this.hashPassword(this.password)
+		next()
+	}
+	// this.password = this.hashPassword(this.password)
+	// next()
+})
 
-
-/**
- * The pre-save hook method.
- */
-UserSchema.pre('save', function saveHook(next) {
-  const user = this;
-
-  // proceed further only if the password is modified or the user is new
-  if (!user.isModified('password')) return next();
-
-
-  return bcrypt.genSalt((saltError, salt) => {
-    if (saltError) { return next(saltError); }
-
-    return bcrypt.hash(user.password, salt, (hashError, hash) => {
-      if (hashError) { return next(hashError); }
-
-      // replace a password string with hash value
-      user.password = hash;
-
-      return next();
-    });
-  });
-});
-
-
-module.exports = mongoose.model('User', UserSchema);
+// Create reference to User & export
+const User = mongoose.model('User', userSchema)
+module.exports = User
