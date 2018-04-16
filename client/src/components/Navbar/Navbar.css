@@ -1,15 +1,9 @@
 .navbar {
-    background-color: #e9e3c4;
+    background-color: rgb(19, 75, 77);
     height: 75px;
 }
 
-/* .navbar-brand {
-    font-size: 40px;
-}
-.navbar-text {
-    padding-right: 50px;
-} */
- 
+
 .navbar-inverse .navbar-brand:hover {
     color: red;
 }
