@@ -13,10 +13,6 @@ class RosterList extends Component {
     member_name: "",
   };
 
-  componentDidMount() {
-    this.loadRosterList();
-  }
-
   render() {
       return <div>
         <div className="App">
