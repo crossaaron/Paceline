@@ -21,7 +21,7 @@ class Events extends Component {
   handleDateChange = eventData => {
     this.eventModalRef.handleModalToggle();
 
-    console.log(eventData);
+    // console.log(eventData);
   }
 
   render() {

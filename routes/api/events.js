@@ -11,3 +11,4 @@ router.route("/:id")
     .delete(eventController.delete);
 
 module.exports = router;
+ 
