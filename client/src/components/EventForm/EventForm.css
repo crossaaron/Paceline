@@ -1,5 +1,16 @@
 .mainForm {
-    margin-left: 50px;
+    /* margin-left: 50px; */
     margin-top: 50px;
-    margin-right: 25px;
+    /* margin-right: 25px; */
+    opacity: .85;
+    padding: 25px;
+}
+
+.well{ 
+    background-color: rgb(241, 241, 240);
+    opacity: .85;
+}
+
+#btn {
+    margin-top: 25px;
 }

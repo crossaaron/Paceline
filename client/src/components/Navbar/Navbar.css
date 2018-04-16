@@ -1,6 +1,6 @@
 .navbar {
     background-color: rgb(19, 75, 77);
-    height: 75px;
+    height: 100px;
 }
 
 
@@ -16,6 +16,6 @@
     color: yellow;
 }
 
-.navbar {
+/* .navbar {
   background-color: #dfd7af;
-}
+} */

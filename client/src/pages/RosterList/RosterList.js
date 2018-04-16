@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import logo from "../../generated.svg";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import API from "../../utils/API";
-import { Link } from "react-router-dom";
+// import API from "../../utils/API";
+// import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { Roster, TeamMember } from "../../components/Roster";
 

@@ -26,14 +26,16 @@ class Events extends Component {
 
   render() {
 
-    return <div>
+    return (
+    
+      <div>
         <EventModal ref= {(ref) => this.eventModalRef = ref}/>
-        <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">Paceline Team Manager</h1>
-            <img src={logo} className="App-logo" alt="logo" />
-          </header>
-        </div>
+          <div className="App">
+            <header className="App-header">
+              <h1 className="App-title">Paceline Team Manager</h1>
+              <img src={logo} className="App-logo" alt="logo" />
+            </header>
+          </div>
         <Navbar />
         <Container fluid>
           <Row>
@@ -46,7 +48,8 @@ class Events extends Component {
           </Row>
         </Container>
         <Footer />
-      </div>;
+      </div>
+    )
   }
 }
 
