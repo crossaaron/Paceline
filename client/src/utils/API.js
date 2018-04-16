@@ -31,6 +31,6 @@ export default {
   },
   // Saves Event with the given ID
   saveEvent: function(EventData) {
-    return axios.post("/api/users", EventData);
+    return axios.post("/api/events", EventData);
   }
 };
