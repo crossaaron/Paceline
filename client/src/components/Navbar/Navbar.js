@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 // Navbar component
 const Navbar = props => (
@@ -38,8 +39,7 @@ const Navbar = props => (
           </div>
         </div>
       </div>
-    </div>
-  </nav>
+
 );
 
 export default Navbar;

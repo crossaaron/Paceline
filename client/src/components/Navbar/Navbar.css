@@ -16,21 +16,6 @@
     color: yellow;
 }
 
-.navbar-inverse .navbar-nav>.active>a {
-    color: yellow;
-    background-color: blue;
-}
-
-.navbar-inverse .navbar-nav>.active>a:hover {
-    color: blue;
-    background-color: yellow;
-}
-
-.navbar-inverse .navbar-nav>.active>a:focus {
-    color: black;
-    background-color: grey;
-}
-
-.navbar-inverse .navbar-nav>li>a:hover {
-    color: red;
+.navbar {
+  background-color: #dfd7af;
 }

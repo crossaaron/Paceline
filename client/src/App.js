@@ -1,20 +1,18 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Events from "./pages/Events";
+import RosterList from "./pages/RosterList";
 import './App.css';
-import Login from "./containers/LoginPage"
-import Signup from "./containers/SignUpPage"
+
+
 
 const App = () => (
   <Router>
     <div>
       <Switch>
-        <Route exact path="/login" component={Login}/>
-        <Route exact path="/" component={Signup}/>
-        <Route exact path="/dashboard" component={Events}/>
-        {/* <Route exact path="/books" component={Books} />
-        <Route exact path="/books/:id" component={Detail} />
-        <Route component={NoMatch} /> */}
+        {/* <Route exact path="/" component={Home}  /> */}
+        <Route exact path="/events" component={Events}/>
+        <Route exadt path="/roster" component={RosterList}/>
       </Switch>
     </div>
   </Router>
@@ -22,5 +20,27 @@ const App = () => (
 
 export default App;
 
-// save the token -- as cookie (req.cookies)
-// to protect routes on server, write an express middleware function and use that on protected routes to see if the user has a json token cookie https://appdividend.com/2018/02/03/express-middleware-tutorial-example-scratch/#Authentication_Example
+
+
+
+
+// class App extends Component {
+//   state = {
+//     date: new Date()
+//   };
+
+//   render() {
+//     return <div className="App">
+//         <header className="App-header">
+//           <h1 className="App-title">Paceline Team Manager</h1>
+//           <img src={logo} className="App-logo" alt="logo" />
+//         </header>
+//         <Navbar />
+//         <p className="App-intro" />
+//         <CalendarView  />
+//         <Footer />
+//       </div>;
+//   }
+// }
+
+// export default App;

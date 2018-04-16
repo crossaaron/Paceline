@@ -1,44 +1,23 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const passport = require('passport');
+const express = require("express");
+const path = require("path");
 const mongoose = require("mongoose");
-// const config = require('./config');
-
-// connect to the database and load models
-// require('./server/models').connect(config.dbUri);
-mongoose.connect("mongodb://localhost:27017/paceline");
-
+const PORT = process.env.PORT || 3001;
 const app = express();
-// tell the app to look for static files in these directories
-// app.use(express.static('./server/static/'));
-app.use(express.static('client/build'));
-// tell the app to parse HTTP body messages
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }))
-// pass the passport middleware
-app.use(passport.initialize());
+const routes = require("./routes");
 
-// load passport strategies
-const localSignupStrategy = require('./server/passport/local-signup');
-const localLoginStrategy = require('./server/passport/local-login');
-passport.use('local-signup', localSignupStrategy);
-passport.use('local-login', localLoginStrategy);
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+mongoose.connect(
+  process.env.MONGDB_URI || "mongodb://localhost:27017/paceline"
+);
+app.use(routes);
 
-// pass the authenticaion checker middleware
-const authCheckMiddleware = require('./server/middleware/auth-check');
-app.use('/api', authCheckMiddleware);
+// Send every request to the React app
+// Define any API routes before this runs
+app.get("*", (req, res) =>
+  res.sendFile(path.join(__dirname, "./client/build/index.html"))
+);
 
-// routes
-const authRoutes = require('./server/routes/auth');
-const apiRoutes = require('./server/routes/api');
-app.use('/auth', authRoutes);
-app.use('/api', apiRoutes);
-
-// Set Port, hosting services will look for process.env.PORT
-app.set('port', (process.env.PORT || 3001));
-
-// start the server
-app.listen(app.get('port'), () => {
-  console.log(`Server is running on port ${app.get('port')}`);
-});
-
+app.listen(PORT, () => console.log(`🌎 ==> Server now on port ${PORT}!`));
