@@ -1,3 +1,11 @@
 .Jumbotron {
     opacity: .75;
+    margin-right: 50px;
+    margin-top: 50px;
+    margin-left: 25px;
+    float: right;
+   
+}
+.react-calendar {
+    width: 100% !important;
 }
