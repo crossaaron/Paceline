@@ -10,73 +10,73 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/paceline");
 const memberSeed = [
   {
     name: "Bob The Biker",
-    author: "raceguy@gmail.com",
+    email: "raceguy@gmail.com",
     paidDues: true,
     memberSince: new Date(Date.now())
   },
   {
     name: "Joe The Biker",
-    author: "guy@gmail.com",
+    email: "guy@gmail.com",
     paidDues: true,
     memberSince: new Date(Date.now())
   },
   {
     name: "Frank The Tank",
-    author: "tankman@gmail.com",
+    email: "tankman@gmail.com",
     paidDues: true,
     memberSince: new Date(Date.now())
   },
   {
     name: "Jill The Junk",
-    author: "jilly@gmail.com",
+    email: "jilly@gmail.com",
     paidDues: true,
     memberSince: new Date(Date.now())
   },
   {
     name: "Sasha the Sweet",
-    author: "bonjour@gmail.com",
+    email: "bonjour@gmail.com",
     paidDues: true,
     memberSince: new Date(Date.now())
   },
   {
     name: "Sleezy Beeze",
-    author: "nifong@gmail.com",
+    email: "nifong@gmail.com",
     paidDues: true,
     memberSince: new Date(Date.now())
   },
   {
     name: "William Shatner",
-    author: "capkirk@gmail.com",
+    email: "capkirk@gmail.com",
     paidDues: true,
     memberSince: new Date(Date.now())
   },
   {
     name: "Rizzo",
-    author: "hooplah@gmail.com",
+    email: "hooplah@gmail.com",
     paidDues: true,
     memberSince: new Date(Date.now())
   },
   {
     name: "Trish The Dish",
-    author: "floozy@gmail.com",
+    email: "floozy@gmail.com",
     paidDues: true,
     memberSince: new Date(Date.now())
   },
   {
     name: "Random Guy",
-    author: "weirdo@gmail.com",
+    email: "weirdo@gmail.com",
     paidDues: true,
     memberSince: new Date(Date.now())
   },
   {
     name: "Bodacious Bella",
-    author: "notagal@gmail.com",
+    email: "notagal@gmail.com",
     paidDues: true,
     memberSince: new Date(Date.now())
   },
   {
     name: "Kensei",
-    author: "ninjabike@gmail.com",
+    email: "ninjabike@gmail.com",
     paidDues: true,
     memberSince: new Date(Date.now())
   }
@@ -85,7 +85,7 @@ const memberSeed = [
 db.Member.remove({})
   .then(() => db.Member.collection.insertMany(memberSeed))
   .then(data => {
-    console.log(data.insertedIds.length + " records inserted!");
+    console.log(memberSeed.length + " records inserted!");
     process.exit(0);
   })
   .catch(err => {
