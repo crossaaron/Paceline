@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Events from "./pages/Events";
+import RosterList from "./pages/RosterList";
 import './App.css';
 
 
@@ -10,6 +11,7 @@ const App = () => (
     <div>
       <Switch>
         <Route exact path="/" component={Events} />
+        <Route exact path="/roster" component={RosterList} />
         {/* <Route exact path="/books" component={Books} />
         <Route exact path="/books/:id" component={Detail} />
         <Route component={NoMatch} /> */}

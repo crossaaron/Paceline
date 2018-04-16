@@ -34,7 +34,7 @@ const Navbar = props => (
                   <a href="/">Home</a>
                 </li>
                 <li>
-                  <a href="">Roster</a>
+                  <a href="/roster">Roster</a>
                 </li>
                 <li>
                   <a href="">Schedule</a>
