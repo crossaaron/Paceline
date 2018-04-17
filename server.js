@@ -6,7 +6,7 @@ const app = express();
 const routes = require("./routes");
 
 
-mongoose.Promise = global.Promise;
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
