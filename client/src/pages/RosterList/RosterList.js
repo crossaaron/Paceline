@@ -22,8 +22,10 @@ componentDidMount() {
 
 loadRoster = () => {
   API.getRoster()
-    .then(res =>
+    .then(res => {
+      console.log(res, "26");
       this.setState({teamMembers: res.data, name: "", email: "", paidDues: "", memberSince:""})
+    }
     )
     .catch(err => console.log(err));
 }
