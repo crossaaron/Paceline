@@ -6,6 +6,7 @@ import API from "../../utils/API";
 // import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { Roster, TeamMember } from "../../components/Roster";
+import MemberModal from "../../components/MemberModal";
 
 class RosterList extends Component {
   state = {
@@ -28,6 +29,10 @@ loadRoster = () => {
     .catch(err => console.log(err));
 }
 
+showMember = () => {
+  console.log("Hello World");
+}
+
   render() {
       return <div>
         <div className="App">
@@ -45,13 +50,16 @@ loadRoster = () => {
               {this.state.teamMembers.map(member =>(
                 <TeamMember key={member._id}>
                   <strong>
-                    {member.name} {member.email}
+                    <span onClick={this.showMember}>{member.name}</span>
                   </strong>
                 </TeamMember>
               ))}
             </Roster>
             ) 
             : (<h3>No Members</h3>)} 
+            </Col>
+            <Col size="sm-6">
+              <MemberModal />
             </Col>
           </Row>
         </Container>
