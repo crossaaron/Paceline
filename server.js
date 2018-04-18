@@ -11,6 +11,12 @@ const routes = require("./routes");
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// parse application/json
+app.use(bodyParser.json());
+
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost:27017/paceline"
 );
