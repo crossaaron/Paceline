@@ -16,6 +16,8 @@ mongoose.connect(
 );
 app.use(routes);
 
+app.get("/test", (req, res) => res.json("it worked"));
+
 // Send every request to the React app
 // Define any API routes before this runs.
 app.get("*", (req, res) =>
