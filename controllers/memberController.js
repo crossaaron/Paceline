@@ -2,7 +2,6 @@ const db = require("../models");
 
 module.exports = {
   findAll: function(req, res) {
-    res.json("got here")
     db.Member.find(req.query)
       .then(dbMembers => {res.json(dbMembers)})
       .catch(err => res.json(err).status(422));
