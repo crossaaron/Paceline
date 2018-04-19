@@ -23,7 +23,6 @@ mongoose.connect(
 );
 app.use(routes);
 
-
 // Send every request to the React app
 // Define any API routes before this runs.
 app.get("*", (req, res) =>
