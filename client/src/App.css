@@ -27,3 +27,11 @@
   font-size: large;
 }
 
+.videoContainer {
+  opacity: 0.5;
+}
+
+.html5-video-player {
+  opacity: 0.5;
+  z-index: -1;
+}

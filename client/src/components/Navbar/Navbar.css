@@ -1,29 +1,45 @@
-.navbar {
-    background-color: rgb(19, 75, 77);
-    height: 50px;
-}
+
+/*.navbar {
+    font-family: 'Concert One', cursive;
+}*/
 
 
-.navbar-brand:hover {
-    color: red;
-}
+/*.nav-link {
+    letter-spacing: 0.0625em;
+}*/
 
-/*.navbar-inverse .navbar-brand {
-    color: yellow;
-}
+/*.nav-link:hover {
+    letter-spacing: 0.0625em;
+}*/
 
-.navbar-inverse .navbar-nav>li>a {
+/*.navbar-brand {
     color: yellow;
 }*/
 
-.navbar-brand {
-    color: yellow;
-}
+/*.navbar-brand:hover {
+    color: red;
+}*/
 
-.navbar-nav>li>a {
+/*.navbar-brand:hover {
+    color: red;
+}*/
+
+/*.navbar-brand {
     color: yellow;
-}
+}*/
+
+/*.navbar-nav>li>a {
+    color: yellow;
+}*/
+
+
+/*.navbar-item>li>a {
+    color: yellow;
+}*/
 
 /* .navbar {
   background-color: #dfd7af;
-} */
+}
+*/
+
+

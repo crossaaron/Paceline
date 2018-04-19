@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import logo from "../../generated.svg";
+//import logo from "../../generated.svg";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { Col, Row, Container } from "../../components/Grid";
-
+import Video from "../../components/Video";
 
 class Home extends Component {
 
@@ -13,17 +13,13 @@ class Home extends Component {
         <div className="App">
           <header className="App-header">
             <h1 className="App-title">Paceline Team Manager</h1>
-            <img src={logo} className="App-logo" alt="logo" />
           </header>
         </div>
         <Navbar />
         <Container fluid>
           <Row>
-            <Col size="sm-6">
-              <h1>HOME</h1>
-            </Col>
-            <Col size="sm-6">
-              <h1>PAGE</h1>
+            <Col size="sm-12" className="videoContainer">
+              <Video />
             </Col>
           </Row>
         </Container>

@@ -23,7 +23,7 @@ class EventModal extends Component {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalCenterTitle">
-                Modal title
+                The Greatest Event in the World!
               </h5>
               <button
                 type="button"
@@ -35,7 +35,12 @@ class EventModal extends Component {
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div className="modal-body">...</div>
+            <div className="modal-body">
+              <p>Upcoming Bike event</p>
+              <p>Your Favorite Race!</p>
+              <p>Location </p>
+              <p>Time of Event:  ISO DATE TIME </p>
+            </div>
             <div className="modal-footer">
               <button
                 type="button    "
