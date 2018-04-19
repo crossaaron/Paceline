@@ -16,6 +16,7 @@ class Home extends Component {
             <img src={logo} className="App-logo" alt="logo" />
           </header>
         </div>
+        <Navbar />
         <Container fluid>
           <Row>
             <Col size="sm-6">
