@@ -6,6 +6,7 @@ import API from "../../utils/API";
 // import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { Roster, TeamMember } from "../../components/Roster";
+import MemberCard from "../../components/MemberCard";
 
 class RosterList extends Component {
   state = {
@@ -13,7 +14,8 @@ class RosterList extends Component {
     name: "",
     email: "",
     paidDues: "",
-    memberSince: ""
+    memberSince: "",
+    selectedMember: null
   }
 
 componentDidMount() {
@@ -22,10 +24,17 @@ componentDidMount() {
 
 loadRoster = () => {
   API.getRoster()
-    .then(res =>
+    .then(res => {
+      console.log(res, "26");
       this.setState({teamMembers: res.data, name: "", email: "", paidDues: "", memberSince:""})
+    }
     )
     .catch(err => console.log(err));
+}
+
+showMember = (_id) => {
+  const selectedMember = this.state.teamMembers.find(member => member._id === _id);
+  this.setState({ selectedMember });
 }
 
   render() {
@@ -45,13 +54,16 @@ loadRoster = () => {
               {this.state.teamMembers.map(member =>(
                 <TeamMember key={member._id}>
                   <strong>
-                    {member.name} {member.email}
+                    <span onClick={() => this.showMember(member._id)}>{member.name}</span>
                   </strong>
                 </TeamMember>
               ))}
             </Roster>
             ) 
             : (<h3>No Members</h3>)} 
+            </Col>
+            <Col size="sm-6">
+              <MemberCard {...this.state.selectedMember} />
             </Col>
           </Row>
         </Container>
