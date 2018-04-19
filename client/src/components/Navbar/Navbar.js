@@ -4,47 +4,36 @@ import "./Navbar.css";
 // Navbar component
 const Navbar = props => (
 
+        <nav className="navbar navbar-expand-md bg-dark navbar-dark">
+        <Link className="navbar-brand" to="#"><i className="fas fa-bicycle fa-2x"></i></Link>
 
-      <div className="navbar navbar-fixed-top ">
-        <div className="container justify-content-center">
-          <div className="navbar-header">
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span className="navbar-toggler-icon"></span>
+        </button>
 
-            <Link className="navbar-brand" to="/"
+        <div className="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul className="navbar-nav">
 
-            // className={
-            //         window.location.pathname === "/"
-            //           ? "nav-link active"
-            //           : "nav-link"
-            //       }
-            >
-              Home
-            </Link>
-            <Link className="navbar-brand" to="/roster"
+            <li className="nav-item">
+            <Link className="nav-link" to="/">Home</Link>
+            </li>
 
-            // className={
-            //         window.location.pathname === "/"
-            //           ? "nav-link active"
-            //           : "nav-link"
-            //       }
-            >
-              Roster
-            </Link>
-            <Link className="navbar-brand" to="/events"
+            <li className="nav-item">
+            <Link className="nav-link" to="/Roster">Roster</Link>
+            </li>
 
-            // className={
-            //         window.location.pathname === "/"
-            //           ? "nav-link active"
-            //           : "nav-link"
-            //       }
+            <li className="nav-item">
+            <Link class="nav-link" to="/Events">Events</Link>
+            </li>
 
-                  >
-              Events
-            </Link>
-          </div>
+          </ul>
         </div>
-      </div>
-
+    </nav>
 
 );
 
 export default Navbar;
+
+
+
+
