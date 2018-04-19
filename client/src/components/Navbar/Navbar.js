@@ -17,6 +17,11 @@ const Navbar = props => (
             //           : "nav-link"
             //       }
             >
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
+            </button> */}
+            <Link id="navbar-brand" className="navbar-brand" to="/home">
               Home
             </Link>
             <Link className="navbar-brand" to="/roster"
