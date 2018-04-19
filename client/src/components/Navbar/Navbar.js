@@ -4,6 +4,7 @@ import "./Navbar.css";
 // Navbar component
 const Navbar = props => (
 
+
         <nav className="navbar navbar-expand-md bg-dark navbar-dark">
         <Link className="navbar-brand" to="#"><i className="fas fa-bicycle fa-2x"></i></Link>
 
@@ -15,15 +16,15 @@ const Navbar = props => (
           <ul className="navbar-nav">
 
             <li className="nav-item">
-            <Link className="nav-link" to="/">Home</Link>
+            <Link className="nav-link" to="/home">Home</Link>
             </li>
 
             <li className="nav-item">
-            <Link className="nav-link" to="/Roster">Roster</Link>
+            <Link className="nav-link" to="/roster">Roster</Link>
             </li>
 
             <li className="nav-item">
-            <Link class="nav-link" to="/Events">Events</Link>
+            <Link class="nav-link" to="/events">Events</Link>
             </li>
 
           </ul>
