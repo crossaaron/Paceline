@@ -32,5 +32,11 @@ export default {
   // Saves Event with the given ID
   saveEvent: function(EventData) {
     return axios.post("/api/events", EventData);
+  },
+  saveUser: function(credentials) {
+    return axios.post("/api/users", credentials);
+  },
+  getUser: function(credentials) {
+    return axios.get("/api/users/", { credentials });
   }
 };

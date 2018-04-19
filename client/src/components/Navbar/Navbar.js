@@ -18,7 +18,7 @@ const Navbar = props => (
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button> */}
-            <Link id="navbar-brand" className="navbar-brand" to="/">
+            <Link id="navbar-brand" className="navbar-brand" to="/home">
               HOME
             </Link>
             <Link id="navbar-brand" className="navbar-brand" to="/roster">

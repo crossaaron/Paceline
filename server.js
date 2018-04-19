@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 const app = express();
 const routes = require("./routes");
 
@@ -15,6 +15,7 @@ mongoose.connect(
   process.env.MONGDB_URI || "mongodb://localhost:27017/paceline"
 );
 app.use(routes);
+
 
 // Send every request to the React app
 // Define any API routes before this runs
